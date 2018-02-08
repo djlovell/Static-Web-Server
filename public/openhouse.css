@@ -1,0 +1,30 @@
+
+body {
+  background-color: #512888;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.content {
+  width: 760px;
+  background-color: white;
+  min-height: 100vh;
+  padding: 20px;
+  box-shadow: #333 4px 0px 6px, #333 -4px 0px 6px;;
+}
+
+.billboard {
+  border: 5px solid #512888;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  color: #777;
+}

@@ -86,12 +86,14 @@ function handleRequest( req, res )
             serveIndexFile( fullPath, req.url, res );
             return;
             }
-        else if( stats.isFile() )
+        if( stats.isFile() )
             {
             console.log( "About to serve file: " + fullPath );
             serveFile( fullPath, res )
             return;
             }
+		res.end( "Error: Is not a valid file or directory. ");
+        return;
         });
     }
 

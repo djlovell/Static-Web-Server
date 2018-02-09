@@ -67,7 +67,8 @@ function serveFile( path, res )
     }
 
 /** @function setMimeType 
- * Request handler for our http server 
+ * Sets MIME types for several common file types. An external library should
+ * be used for a more comprehensive solution. 
  * @param {String} filePath - file path
  * @param {http.ServerResponse} res - the http response object
  */

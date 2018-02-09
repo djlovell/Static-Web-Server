@@ -7,7 +7,6 @@ const path   = require( 'path'          );
 
 const PORT = 1095;
 
-
 var server = http.createServer( handleRequest );
 
 /** @function serveIndex
@@ -88,7 +87,6 @@ function handleRequest( req, res )
             }
         if( stats.isFile() )
             {
-            console.log( "About to serve file: " + fullPath );
             serveFile( fullPath, res )
             return;
             }
@@ -115,7 +113,6 @@ function serveIndexFile( filePath, reqURL, res )
             }
         if( stats.isFile() )
             {
-            console.log( "About to serve file 2: " + indexPath );
             serveFile( indexPath, res );
             return;
             }

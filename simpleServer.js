@@ -61,8 +61,35 @@ function serveFile( path, res )
             res.statuscode = 500;
             res.end( "Server Error: Unknown cause." );
             } 
+        setMimeType( path, res );
         res.end( data );
         });
+    }
+
+/** @function setMimeType 
+ * Request handler for our http server 
+ * @param {String} filePath - file path
+ * @param {http.ServerResponse} res - the http response object
+ */
+function setMimeType( filePath, res )
+    {
+    var mimeMap = 
+        {
+        'html' : 'text/html',
+        'css'  : 'text/css',
+        'js'   : 'application/javascript',
+        'json' : 'application/json',
+        'jpeg' : 'image/jpeg',
+        'jpg'  : 'image/jpeg',
+        'png'  : 'image/png',
+        'gif'  : 'image/gif'
+        };
+    
+    var fileExt = filePath.split( '.' ).pop();
+    var mimeType = mimeMap[ fileExt ];
+    mimeType = ( mimeType !== undefined ) ? mimeType : 'text/plain';
+
+    res.setHeader( 'Content-Type', mimeType );
     }
 
 /** @function handleRequest 
